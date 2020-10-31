@@ -119,7 +119,7 @@
 }
 %- underline
 \ifxetex% use underline from xeCJKfntef
-    \renewcommand{\CJKunderlinecolor}{\color[rgb]{0,0,0}}% set underline color
+    \RequirePackage{xeCJKfntef}
     \renewcommand{\uline}[1]{\CJKunderline{#1}}% unified name
 \else% use underline from ulem
     \RequirePackage{ulem}%
@@ -189,7 +189,7 @@
 
             \def\tabcolsep{1pt}
             \def\arraystretch{1.3}
-            {\fanggb
+            {\ifartx@windows\fanggb\else\fangsong\fi
             \begin{tabular}{ll}
                 \makebox[4em][s]{\cupb@label@title}& \ulenhance[1.2pt]{\ulextend{\cupb@value@titleone}}\\
                 & \ulenhance[1.2pt]{\ulextend{\cupb@value@titletwo}}\\
